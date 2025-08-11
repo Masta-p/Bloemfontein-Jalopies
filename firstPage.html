@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloemfontein Jalopies</title>
+    <link rel="stylesheet" href="newstyle2.css">
+    <style>
+        .add-car-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .add-car-form input,
+        .add-car-form select,
+        .add-car-form button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .add-car-form button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bloemfontein Jalopies</h1>
+    <h2>Used Cars</h2>
+
+    <form class="add-car-form" id="new-car-form">
+        <h3>Add a Used Car</h3>
+        <input type="text" id="title" placeholder="Title (e.g., 2020 Ford Focus)" required>
+        <input type="text" id="price" placeholder="Price (e.g., R350 000)" required>
+        <input type="text" id="mileage" placeholder="Mileage (e.g., 45 000 km)" required>
+        <input type="text" id="contact" placeholder="Contact (e.g., Pule - 0813368006)" required>
+        
+        <select id="image-select" required>
+            <option value="" disabled selected>Select a car image...</option>
+            <option value="toyota-corolla.jpg">Toyota Corolla</option>
+            <option value="fordRanger.avif">Ford Ranger</option>
+            <option value="vwPolo.jpg">VW Polo</option>
+            </select>
+
+        <button type="submit">Add Car</button>
+    </form>
+
+    <div class="car-listings" id="car-listings-container">
+        <div class="car-card">
+            <img src="toyota-corolla.jpg" alt="2017 Toyota Corolla">
+            <div class="card-details">
+                <h3>2017 Toyota Corolla</h3>
+                <p><strong>Price:</strong> R186 000</p>
+                <p><strong>Mileage:</strong> 196 601 km</p>
+                <p><strong>Contact:</strong> Pule - 0813368006</p>
+                <p>A dependable car from Toyota.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('new-car-form');
+            const listingsContainer = document.getElementById('car-listings-container');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const title = document.getElementById('title').value;
+                const price = document.getElementById('price').value;
+                const mileage = document.getElementById('mileage').value;
+                const contact = document.getElementById('contact').value;
+                
+                // Get the value from the select dropdown
+                const image = document.getElementById('image-select').value;
+
+                const newCard = document.createElement('div');
+                newCard.classList.add('car-card');
+
+                newCard.innerHTML = `
+                    <img src="${image}" alt="${title}">
+                    <div class="card-details">
+                        <h3>${title}</h3>
+                        <p><strong>Price:</strong> ${price}</p>
+                        <p><strong>Mileage:</strong> ${mileage}</p>
+                        <p><strong>Contact:</strong> ${contact}</p>
+                        <p>A car added by a user.</p>
+                    </div>
+                `;
+
+                listingsContainer.appendChild(newCard);
+
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+    /* Basic CSS for a clean look, similar to previous examples */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .car-listings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .car-card {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 350px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .car-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        .car-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-details {
+            padding: 20px;
+        }
+        .card-details h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: #007bff;
+        }
+        .card-details p {
+            margin: 5px 0;
+        }
+h1 {
+    font-family: cursive;
+    color: cornflowerblue;
+}
