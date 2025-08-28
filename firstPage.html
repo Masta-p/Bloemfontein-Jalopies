@@ -42,7 +42,7 @@
         <input type="text" id="price" placeholder="Price (e.g., R350 000)" required>
         <input type="text" id="mileage" placeholder="Mileage (e.g., 45 000 km)" required>
         <input type="text" id="contact" placeholder="Contact (e.g., Pule - 0813368006)" required>
-        
+
         <select id="image-select" required>
             <option value="" disabled selected>Select a car image...</option>
             <option value="toyota-corolla.jpg">Toyota Corolla</option>
@@ -55,7 +55,7 @@
 
     <div class="car-listings" id="car-listings-container">
         <div class="car-card">
-            <img src="toyota-corolla.jpg" alt="2017 Toyota Corolla">
+            <img src="odometer2.jpg" alt="2017 Toyota Corolla">
             <div class="card-details">
                 <h3>2017 Toyota Corolla</h3>
                 <p><strong>Price:</strong> R186 000</p>
@@ -64,8 +64,24 @@
                 <p>A dependable car from Toyota.</p>
             </div>
         </div>
+
+         <div class="car-card">
+            <img src="Allcars.JPG" alt="BMW 320i 2013 ">
+        </div>
+
+        <div class="car-card">
+            <img src="AllcarsFront.jpg" alt="BMW 320i 2013 ">
+            <div class="card-details">
+                <h3>BMW 320i 2013</h3>
+                <p><strong>Price:</strong> R179 900</p>
+                <p><strong>Mileage:</strong> 187 300 km</p>
+                <p><strong>Contact:</strong> Francois - 076 308 4554</p>
+                <p>A/t, Sunroof, well maintained</p>
+            </div>
+        </div>
+
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('new-car-form');
@@ -78,7 +94,7 @@
                 const price = document.getElementById('price').value;
                 const mileage = document.getElementById('mileage').value;
                 const contact = document.getElementById('contact').value;
-                
+
                 // Get the value from the select dropdown
                 const image = document.getElementById('image-select').value;
 
